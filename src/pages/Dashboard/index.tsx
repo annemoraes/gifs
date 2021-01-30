@@ -55,7 +55,7 @@ const Dashboard: React.FC = () => {
         <GifsContainer>
           {gifs.map((gif: Gif) => (
             <li key={gif.id}>
-              <Link to={`/media/${gif.images.fixed_height.url}`}>
+              <Link to="/">
                 <img className="gif" src={gif.images.fixed_height.url} alt="" />
               </Link>
             </li>

@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev:server": "json-server --watch db.json --delay 300 --port 5000"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +59,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "json-server": "^0.16.3",
     "prettier": "^2.2.1"
   }
 }
