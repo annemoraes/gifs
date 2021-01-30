@@ -12,7 +12,7 @@ const Header: React.FC = () => {
               <div data-testid="header-testid" />
               Dashboard
             </Link>
-            <Link to="/favorites">Favoritos</Link>
+            <Link to="/favorites">Meus favoritos</Link>
           </>
         </nav>
       </header>

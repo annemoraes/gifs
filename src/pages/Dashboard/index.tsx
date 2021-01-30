@@ -39,31 +39,30 @@ const Dashboard: React.FC = () => {
     }
   }
 
-  function teste() {
-    <p>ola</p>;
-  }
   return (
-    <Container>
+    <>
       <Header />
-      <Form onSubmit={handleSearch}>
-        <input
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          placeholder="Pesquise um tema"
-        />
-        <button type="submit">Pesquisar</button>
-      </Form>
+      <Container>
+        <Form onSubmit={handleSearch}>
+          <input
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Pesquise um tema"
+          />
+          <button type="submit">Pesquisar</button>
+        </Form>
 
-      <GifsContainer>
-        {gifs.map((gif: Gif) => (
-          <li key={gif.id}>
-            <Link to={`/media/${gif.images.fixed_height.url}`}>
-              <img className="gif" src={gif.images.fixed_height.url} alt="" />
-            </Link>
-          </li>
-        ))}
-      </GifsContainer>
-    </Container>
+        <GifsContainer>
+          {gifs.map((gif: Gif) => (
+            <li key={gif.id}>
+              <Link to={`/media/${gif.images.fixed_height.url}`}>
+                <img className="gif" src={gif.images.fixed_height.url} alt="" />
+              </Link>
+            </li>
+          ))}
+        </GifsContainer>
+      </Container>
+    </>
   );
 };
 
