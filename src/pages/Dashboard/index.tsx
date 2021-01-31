@@ -13,12 +13,16 @@ import Header from '../../components/Header';
 interface Gif {
   title: string;
   id: string;
-  slug: string;
+  url: string;
   images: {
     fixed_height: {
       url: string;
     };
   };
+}
+
+interface Data {
+  url: string;
 }
 
 const Dashboard: React.FC = () => {
@@ -46,8 +50,10 @@ const Dashboard: React.FC = () => {
 
   async function handleFavorites(event: FormEvent) {
     event.preventDefault();
-    // const response = await server.post('gifs', data);
-    console.log(search);
+    const data = {
+      url: favorites,
+    };
+    const response = await server.post('gifs', data);
     console.log(favorites);
   }
 
@@ -78,7 +84,6 @@ const Dashboard: React.FC = () => {
                   onClick={handleFavorites}
                 >
                   <MdFavorite size={22} />
-                  <p>{favorites}</p>
                 </button>
                 <button type="submit">
                   <CgDetailsMore size={22} />
