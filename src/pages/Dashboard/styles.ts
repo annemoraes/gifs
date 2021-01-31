@@ -54,6 +54,7 @@ export const Form = styled.form`
     font-weight: bold;
     transition: background-color 0.2s;
     &:hover {
+      background: ${shade(0.2, '#04d361')};
     }
   }
 `;
@@ -66,8 +67,24 @@ export const GifsContainer = styled.div`
   flex-wrap: wrap;
 
   li {
+    display: flex;
+    flex-direction: column;
     list-style: none;
     padding-left: 5px;
+    padding-bottom: 10px;
+
+    div {
+      background: #dcdcdc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        border: none;
+        background: #dcdcdc;
+        padding: 0 20px 0 20px;
+      }
+    }
   }
   .gif:hover {
     opacity: 30%;
