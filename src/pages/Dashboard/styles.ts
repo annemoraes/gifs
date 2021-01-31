@@ -84,6 +84,15 @@ export const GifsContainer = styled.div`
         background: #dcdcdc;
         padding: 0 20px 0 20px;
       }
+      button:hover {
+        background: #fff;
+      }
+
+      button:hover .details {
+        border: none;
+        background: #dcdcdc;
+        padding: 0 20px 0 20px;
+      }
     }
   }
   .gif:hover {

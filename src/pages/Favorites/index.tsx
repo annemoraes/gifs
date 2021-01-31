@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import server from '../../services/server';
-import { Container } from './styles';
+import { Container, GifsContainer } from './styles';
 import Header from '../../components/Header';
 
 interface Gif {
@@ -24,11 +24,13 @@ const Favorites: React.FC = () => {
     <>
       <Header />
       <Container>
-        {gifs.map((gif: Gif) => (
-          <li key={gif.id}>
-            <img className="gif" src={gif.url} alt="" />
-          </li>
-        ))}
+        <GifsContainer>
+          {gifs.map((gif: Gif) => (
+            <li key={gif.id}>
+              <img className="gif" src={gif.url} alt="" />
+            </li>
+          ))}
+        </GifsContainer>
       </Container>
     </>
   );

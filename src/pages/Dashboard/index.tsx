@@ -9,6 +9,7 @@ import api from '../../services/api';
 import server from '../../services/server';
 
 import Header from '../../components/Header';
+import Heart from '../../assets/heart.svg';
 
 interface Gif {
   title: string;
@@ -19,10 +20,6 @@ interface Gif {
       url: string;
     };
   };
-}
-
-interface Data {
-  url: string;
 }
 
 const Dashboard: React.FC = () => {
@@ -50,11 +47,12 @@ const Dashboard: React.FC = () => {
 
   async function handleFavorites(event: FormEvent) {
     event.preventDefault();
+
     const data = {
       url: favorites,
     };
-    const response = await server.post('gifs', data);
-    console.log(favorites);
+
+    await server.post('gifs', data);
   }
 
   return (
@@ -83,10 +81,12 @@ const Dashboard: React.FC = () => {
                   onClickCapture={e => setFavorites(e.currentTarget.value)}
                   onClick={handleFavorites}
                 >
-                  <MdFavorite size={22} />
+                  {/* <MdFavorite size={22} /> */}
+                  Salvar
                 </button>
-                <button type="submit">
-                  <CgDetailsMore size={22} />
+                <button type="submit" className="details">
+                  {/* <CgDetailsMore size={22} /> */}
+                  Detalhes
                 </button>
               </div>
             </li>
